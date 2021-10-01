@@ -1,8 +1,8 @@
 const fs = require("fs");
 
 const inputFile = process.argv[2];
-const outputFile = inputFile.replace(/(?<fileName>.+)(?<extension>\.w+$)/, '$<fileName>.tmp')
-console.log(outputFile)
+const outputFile = inputFile.replace(/(?<fileName>.+)(?<extension>\.\w+$)/, '$<fileName>.tmp')
+
 const regExp =
   /#ifdef\s+(?<condition>\w+)\s(?<ifBlock>([^#]+\n?)+)#else\s?(?<elseBlock>([^#]+\n?)+)#endif\s?/gm;
 
