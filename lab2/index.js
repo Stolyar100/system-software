@@ -1,7 +1,10 @@
 const fs = require("fs");
 
 const inputFile = process.argv[2];
-const outputFile = inputFile.replace(/(?<fileName>.+)(?<extension>\.\w+$)/, '$<fileName>.tmp')
+const outputFile = inputFile.replace(
+  /(?<fileName>.+)(?<extension>\.\w+$)/,
+  "$<fileName>.tmp"
+);
 
 const regExp =
   /#ifdef\s+(?<condition>\w+)\s(?<ifBlock>([^#]+\n?)+)#else\s?(?<elseBlock>([^#]+\n?)+)#endif\s?/gm;
@@ -21,7 +24,7 @@ fs.readFile(inputFile, "utf8", (err, data) => {
     if (err) {
       console.error(err);
     } else {
-      console.log('Finished without errors')
+      console.log("Finished without errors");
     }
   });
 });
