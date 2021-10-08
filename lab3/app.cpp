@@ -35,9 +35,7 @@ int main ()
     #else
       cout << "Hello World";
     #endif
-  }
+  )
 
   return 0;
-
-
-
+}
